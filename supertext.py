@@ -34,14 +34,9 @@ def save_file():
                                                  filetypes=[("Text files", "*.txt"), ("Program files", "*.py"),
                                                             ("No console programs", "*.pyw")])
     if file_path:
-        if "This PC" in file_path:
-            content = text_widget.get('1.0', tk.END)
-            with open(file_path, 'w') as file:
-                file.write(content)
-        else:
-            messagebox.showerror("","Your file isn't in this PC.")
-            file_path = None
-
+        content = text_widget.get('1.0', tk.END)
+        with open(file_path, 'w') as file:
+            file.write(content)
 
 def undo():
     if undo_stack:
